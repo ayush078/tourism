@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Fake coder</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+<!---------------------section------------------>
+    <section class="home">
+
+        <video class="video-slide active" src="japan.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="swis.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="korea.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="paris.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="dubai.mp4" autoplay muted loop></video>
+
+        <!-----------------------------content part------------------->
+
+        <div class="content active">
+            <h1>wonderful.<br><span>Japan</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit beatae mollitia dolorem rerum, itaque similique dolor magni unde quae. Magni perferendis ipsum vitae expedita quidem eos, inventore corporis molestiae.</p>
+            <a href="#">Read More</a>
+            <a></a>
+        </div>
+
+        <div class="content">
+            <h1>Majestic.<br><span>Switzerland</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit beatae mollitia dolorem rerum, itaque similique dolor magni unde quae. Magni perferendis ipsum vitae expedita quidem eos, inventore corporis molestiae.</p>
+            <a href="#">Read More</a>
+            <a></a>
+        </div>
+
+        <div class="content">
+            <h1>Beautiful.<br><span>Korea</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit beatae mollitia dolorem rerum, itaque similique dolor magni unde quae. Magni perferendis ipsum vitae expedita quidem eos, inventore corporis molestiae.</p>
+            <a href="#">Read More</a>
+            <a></a>
+        </div>
+
+        <div class="content">
+            <h1>Wonderful.<br><span>Paris</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit beatae mollitia dolorem rerum, itaque similique dolor magni unde quae. Magni perferendis ipsum vitae expedita quidem eos, inventore corporis molestiae.</p>
+            <a href="#">Read More</a>
+            <a></a>
+        </div>
+
+        <div class="content">
+            <h1>Adventurous.<br><span>Dubai</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit beatae mollitia dolorem rerum, itaque similique dolor magni unde quae. Magni perferendis ipsum vitae expedita quidem eos, inventore corporis molestiae.</p>
+            <a href="#">Read More</a>
+            <a></a>
+        </div>
+
+        <!--------------------------media-icon----------------------->
+        <div class="media-icons">
+            <a href="#" class="fa fa-facebook"></a> 
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+        </div>
+
+       <!---------------------------slider------------------------------>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+        
+    </section>
+    <!-- javascript for responsive navigation menu -->
+    <script type="text/javascript">
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");   
+
+    menuBtn.addEventListener("click",()=>{
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+    // javascript for video slider
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+    
+    var sliderNav = function(manual){
+        btns.forEach((btn)=>{
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide)=>{
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content)=>{
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn,i)=>{
+        btn.addEventListener("click",()=>{
+            sliderNav(i);
+        });
+    });
+
+
+    </script>
+</body>
+</html>
